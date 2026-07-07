@@ -13,6 +13,8 @@ const mensaje = document.getElementById("mensaje");
 const lista = document.getElementById("listaHistorial");
 const totalHoy = document.getElementById("totalHoy");
 const cantidadHoy = document.getElementById("cantidadHoy");
+const totalGeneral = document.getElementById("totalGeneral");
+const cantidadGeneral = document.getElementById("cantidadGeneral");
 const splash = document.getElementById("splash");
 const app = document.getElementById("app");
 
@@ -175,6 +177,7 @@ function actualizarPantalla() {
 
     let total = 0;
     let cantidad = 0;
+    let totalGeneralCalculado = 0;
 
     if (historial.length === 0) {
 
@@ -184,6 +187,8 @@ function actualizarPantalla() {
     } else {
 
         historial.slice(0, 10).forEach((gasto, indice) => {
+
+            totalGeneralCalculado += Number(gasto.monto);
 
             if (gasto.fecha === hoy) {
 
@@ -222,6 +227,13 @@ function actualizarPantalla() {
 
     cantidadHoy.textContent =
         cantidad + (cantidad === 1 ? " gasto" : " gastos");
+    
+    totalGeneral.textContent =
+    "$ " + totalGeneralCalculado.toLocaleString("es-AR");
+
+    cantidadGeneral.textContent =
+      historial.length +
+      (historial.length===1 ? " gasto" : " gastos");
 
 }
 
