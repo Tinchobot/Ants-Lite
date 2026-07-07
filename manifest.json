@@ -1,6 +1,6 @@
 {
-  "name": "Ants",
-  "short_name": "Ants",
+  "name": "Ants Lite",
+  "short_name": "Ants Lite",
   "description": "Registro inteligente de gastos personales",
   "start_url": "./index.html",
   "display": "standalone",
