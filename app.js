@@ -2,7 +2,6 @@
 // ANTS 1.0
 // =====================================
 
-const WEBHOOK = "https://hook.us2.make.com/ecky1ftg71ist2i2j3pgmvqcxk7ig77j";
 
 // Elementos
 const entrada = document.getElementById("entrada");
@@ -148,28 +147,6 @@ const monto = gastoInterpretado.monto;
     );
 
     actualizarPantalla();
-
-    try {
-
-        await fetch(WEBHOOK, {
-
-            method: "POST",
-
-            headers: {
-
-                "Content-Type": "application/json"
-
-            },
-
-            body: JSON.stringify(gasto)
-
-        });
-
-    } catch (e) {
-
-        console.log(e);
-
-    }
 
     sonidoGuardar.currentTime = 0;
 
